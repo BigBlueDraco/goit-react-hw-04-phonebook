@@ -1,15 +1,9 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-export class Filter extends Component {
-  
-
-  render() {
-    return (
-        <input type="text" name="filter" onInput={(e)=>this.props.searcheFunc(e)} />
-    )
-  }
-}
+export const Filter = ({ searcheFunc }) => {
+  return <input type="text" name="filter" onInput={e => searcheFunc(e)} />;
+};
 Filter.propTypes = {
-    searcheFunc: PropTypes.func.isRequired,
-}
+  searcheFunc: PropTypes.func.isRequired,
+};

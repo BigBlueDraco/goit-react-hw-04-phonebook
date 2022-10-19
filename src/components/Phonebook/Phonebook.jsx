@@ -34,7 +34,6 @@ export const Phonebook = () => {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('contacts'));
     if (data) {
-      console.log('Data' + data);
       setContacts([...data]);
     }
   }, []);

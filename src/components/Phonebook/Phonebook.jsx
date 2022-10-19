@@ -8,7 +8,9 @@ import { Section } from 'components/Section/Section';
 import { useState, useEffect } from 'react';
 
 export const Phonebook = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(
+    JSON.parse(localStorage.getItem('contacts'))
+  );
   const [filter, setFilter] = useState('');
 
   const searcheHandler = ({ target: { value } }) => {
@@ -30,13 +32,6 @@ export const Phonebook = () => {
     contacts.splice(index, 1);
     setContacts([...contacts]);
   };
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('contacts'));
-    if (data) {
-      setContacts([...data]);
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));

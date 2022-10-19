@@ -2,7 +2,6 @@ import { Button } from 'components/Button/Button';
 import { Section } from 'components/Section/Section';
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { useState } from 'react';
 
 const INITIAL_FORM_DATA = {

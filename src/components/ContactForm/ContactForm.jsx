@@ -21,12 +21,6 @@ export const ContactForm = props => {
     setNumber(value);
   };
 
-  // changeHandler = e => {
-  //   const { name, value } = e.target;
-  //   console.log(value);
-  //   this.setState(state => ({ [name]: value }));
-  // };
-
   const handleSubmit = e => {
     e.preventDefault();
     props.submitFunc({ name, number });

@@ -28,14 +28,13 @@ export const Phonebook = () => {
   };
 
   const deleteContact = e => {
-    const index = contacts.findIndex(elem => elem.id === e.target.dataset.id);
+    const index = contacts.findIndex(elem => elem.name === e.target.dataset.id);
     contacts.splice(index, 1);
     setContacts([...contacts]);
   };
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
-    console.log('DidUpdate' + contacts);
   }, [contacts]);
 
   return (
